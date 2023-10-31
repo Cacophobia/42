@@ -22,10 +22,6 @@ void	*ft_memcpy(void *dest, const void *src, int n)
 	counter = 0;
 	psrc = (unsigned char *)src;
 	pdest = (unsigned char *)dest;
-	if (pdest == NULL && psrc == NULL)
-	{
-		return (dest);
-	}
 	while (counter < n)
 	{
 		*pdest = *psrc;
