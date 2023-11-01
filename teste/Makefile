@@ -6,7 +6,7 @@
 #    By: nranna <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/18 12:19:00 by nranna            #+#    #+#              #
-#    Updated: 2023/11/01 15:14:58 by nranna           ###   ########.fr        #
+#    Updated: 2023/11/01 15:59:54 by nranna           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,14 +22,14 @@ OBJS = $(SRC:.c=.o)
 all: $(NAME)
 
 %.o: %.c $(INCLUDE)
-	$(CC) $(CCFLAGS) -c -o $@ $<
+	@$(CC) $(CCFLAGS) -c -o $@ $<
 
 $(NAME): $(OBJS)
-	ar -rcs $(NAME) $(OBJS)
+	@ar -rcs $(NAME) $(OBJS)
 clean:
-	rm -f $(OBJS)
+	@rm -f $(OBJS)
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 re: fclean all
 
 .PHONY: all clean fclean re
