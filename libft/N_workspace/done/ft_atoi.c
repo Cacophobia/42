@@ -6,12 +6,13 @@
 /*   By: nranna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 14:17:24 by nranna            #+#    #+#             */
-/*   Updated: 2023/10/25 13:15:28 by nranna           ###   ########.fr       */
+/*   Updated: 2023/11/01 13:38:18 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {
@@ -24,7 +25,7 @@ int	ft_atoi(const char *nptr)
 	sign = 1;
 	while (nptr[counter])
 	{
-		while (nptr[counter] <= ' ')
+		while ((nptr[counter] == ' ') || (nptr[counter] >= 9 && nptr[counter] <= 13))
 			counter++;
 		if (nptr[counter] == '-' || nptr[counter] == '+')
 		{
@@ -38,12 +39,4 @@ int	ft_atoi(const char *nptr)
 		counter++;
 	}
 	return (result * sign);
-}
-
-int	main(int argc, char *argv[])
-{
-	(void)argc;
-	printf ("%d\n", ft_atoi(argv[1]));
-	printf ("%d\n", atoi(argv[1]));
-	return (0);
 }

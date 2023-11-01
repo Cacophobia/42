@@ -6,7 +6,7 @@
 #    By: nranna <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/18 12:19:00 by nranna            #+#    #+#              #
-#    Updated: 2023/11/01 13:37:08 by nranna           ###   ########.fr        #
+#    Updated: 2023/11/01 14:29:37 by nranna           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = cc
 CCFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 
-TARGET = libft.a
+TARGET = $(NAME)
 SRC = ft_atoi.c ft_isdigit.c ft_strlen.c
 INCLUDE = libft.h
 
@@ -24,5 +24,19 @@ OBJS = $(SRC:.c=.o)
 #all only runs if there's NAME but if something in SRC or INCLUDE changes he runs anyways.
 all: $(NAME)
 
+%.o: %.c $(INCLUDE)
+	$(CC) $(CCFLAGS) -c -o $(TARGET) $(SRC)
+
 $(NAME): $(SRC) $(INCLUDE)
-	$(CC) $(CCFLAGS) -o $(TARGET) $(SRC)
+	ar -rc $(TARGET) $(OBJS)
+
+
+
+
+clean:
+	rm -f $(OBJS)
+fclean:
+	rm -f $(NAME) $(OBJS)
+re: fclean all
+
+.PHONY: all clean fclean re
