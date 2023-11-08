@@ -1,20 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nranna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 12:18:12 by nranna            #+#    #+#             */
-/*   Updated: 2023/11/01 11:51:25 by nranna           ###   ########.fr       */
+/*   Created: 2023/11/07 15:18:14 by nranna            #+#    #+#             */
+/*   Updated: 2023/11/07 15:52:43 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+//#include "libft.h"//
+#include <string.h>
 
-int	ft_strlen(const char *s);
-int	ft_isdigit(int c);
-int	ft_atoi(const char *nptr);
+void	ft_bzero(void *s, size_t n)
+{
+	size_t	counter;
 
-#endif
+	counter = 0;
+	while (counter < n)
+	{
+		((char *)s)[counter] = '\0';
+		counter++;
+	}
+}
+
+int	main(void)
+{
+	char	test[] = "test";
+	char	test1[] = "test";
+	bzero (test, sizeof(test));
+	ft_bzero (test1, sizeof(test1));
+	return (0);
+}
