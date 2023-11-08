@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nranna <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: nranna <nranna@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 15:06:49 by nranna            #+#    #+#             */
-/*   Updated: 2023/11/01 15:13:01 by nranna           ###   ########.fr       */
+/*   Created: 2023/11/07 17:39:58 by nranna            #+#    #+#             */
+/*   Updated: 2023/11/07 17:41:55 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
 
-int	main(void)
+int	ft_tolower(int c)
 {
-
-	printf("%d\n", atoi("42") == ft_atoi("42"));
-	return (0);
+	if (c >= 'A' && c <= 'Z')
+	{
+		c = c + 32;
+	}
+	return (c);
 }
