@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <ctype.h>
+#include "libft.h"
 
 int	ft_isalpha(int c)
 {
@@ -23,11 +22,4 @@ int	ft_isalpha(int c)
 	{
 		return (0);
 	}
-}
-
-int	main(void)
-{
-	printf("\nMine isalpha result: %d\n", ft_isalpha(' '));
-	printf("Default isalpha result: %d\n\n", isalpha(' '));
-	return (0);
 }

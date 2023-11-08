@@ -1,16 +1,26 @@
-#include <stdio.h>
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nranna <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/08 14:52:24 by nranna            #+#    #+#             */
+/*   Updated: 2023/11/08 14:53:56 by nranna           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memset(void *ptr, int value, size_t num)
 {
-	int	counter;
+	size_t			counter;
 	unsigned char	*ptr_counter;
 	unsigned char	ptr_value;
 
 	ptr_counter = (unsigned char *)ptr;
 	ptr_value = (unsigned char)value;
 	counter = 0;
-	
 	while (counter < num)
 	{
 		*ptr_counter = ptr_value;
@@ -18,17 +28,4 @@ void	*ft_memset(void *ptr, int value, size_t num)
 		counter++;
 	}
 	return (ptr);
-}
-
-int	main(void)
-{
-	char test[10];
-	char test2[20];
-	memset(test, 'a', sizeof(test));
-	printf("%s\n", test);
-
-	printf("\nNow for my memset :)\n");
-	ft_memset(test2, 'n', sizeof(test2));
-	printf("%s\n", test2);
-	return (0);	
 }

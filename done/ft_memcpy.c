@@ -5,43 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nranna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/25 13:43:17 by nranna            #+#    #+#             */
-/*   Updated: 2023/10/25 13:54:06 by nranna           ###   ########.fr       */
+/*   Created: 2023/11/08 14:48:43 by nranna            #+#    #+#             */
+/*   Updated: 2023/11/08 15:52:45 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, int n)
 {
-	int	counter;
+	int				counter;
 	unsigned char	*pdest;
 	unsigned char	*psrc;
 
 	counter = 0;
+	if (dest == NULL && src == NULL)
+		return (NULL);
 	psrc = (unsigned char *)src;
 	pdest = (unsigned char *)dest;
 	while (counter < n)
 	{
 		*pdest = *psrc;
 		counter++;
+		pdest++;
+		psrc++;
 	}
-	return (dest);
-}
-
-int	main(void)
-{
-	char	src[] = "Nathan";
-	char	dest[7];
-
-	memcpy(dest, src, sizeof(src));
-	printf("Source: %s\n", src);
-	printf("Destination: %s\n", dest);
-
-	ft_memcpy(dest, src, sizeof(src));
-	printf("\nNow for my memcpy.\n");
-	printf("Source: %s\n", src);
-	printf("Destination: %s\n", dest);
-	return (0);
+	return ((void *)pdest - counter);
 }

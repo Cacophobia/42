@@ -6,13 +6,15 @@
 /*   By: nranna <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 14:58:56 by nranna            #+#    #+#             */
-/*   Updated: 2023/11/07 15:00:34 by nranna           ###   ########.fr       */
+/*   Updated: 2023/11/08 13:15:45 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_isalnum(int c)
 {
-	if (ft_isalpha(c) || ft_isnum(c))
+	if (ft_isalpha(c) || ft_isdigit(c))
 	{
 		return (1);
 	}

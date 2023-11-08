@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nranna <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 15:02:14 by nranna            #+#    #+#             */
-/*   Updated: 2023/11/07 15:06:17 by nranna           ###   ########.fr       */
+/*   Created: 2023/11/08 15:47:44 by nranna            #+#    #+#             */
+/*   Updated: 2023/11/08 15:52:02 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+void	*memmove(void *dest, const void *src, size_t n)
 {
-	if (c >= 0 && c <= 127)
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
-	}
+	
 }
