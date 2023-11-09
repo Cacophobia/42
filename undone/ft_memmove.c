@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 15:47:44 by nranna            #+#    #+#             */
-/*   Updated: 2023/11/09 07:22:50 by nranna           ###   ########.fr       */
+/*   Updated: 2023/11/09 20:32:46 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 void	*memmove(void *dest, const void *src, size_t n)
 {
 	const char	*psrc;
-	char *pdest;
+	char		*pdest;
 
-	if (pdest = NULL && psrc = NULL)
+	if (pdest == NULL && psrc == NULL)
 		return (NULL);
 	else if (pdest < psrc)
 	{
@@ -35,5 +35,5 @@ void	*memmove(void *dest, const void *src, size_t n)
 			*(pdest--) = *(psrc--);
 		}
 	}
-	return (dest)
+	return (dest);
 }
