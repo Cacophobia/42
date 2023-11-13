@@ -1,39 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 15:47:44 by nranna            #+#    #+#             */
-/*   Updated: 2023/11/09 20:32:46 by nranna           ###   ########.fr       */
+/*   Created: 2023/11/11 11:05:23 by nranna            #+#    #+#             */
+/*   Updated: 2023/11/12 20:13:54 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+//#include "libft.h"
+#include <bsd/string.h>
+#include <stdio.h>
 
-void	*memmove(void *dest, const void *src, size_t n)
+/*size_t	strlcat(char *dst, const char *src, size_t size)
 {
-	const char	*psrc;
-	char		*pdest;
+	char	*pdest;
+	char	*psrc;
 
-	if (pdest == NULL && psrc == NULL)
-		return (NULL);
-	else if (pdest < psrc)
-	{
-		while ((n - 1) > 0)
-		{
-			*(pdest++) = *(psrc++);
-		}
-	}
-	else if (pdest > psrc)
-	{
-		pdest = pdest + n;
-		psrc = psrc + n;
-		while ((n - 1) > 0)
-		{
-			*(pdest--) = *(psrc--);
-		}
-	}
-	return (dest);
+	pdest = dst;
+	psrc = 
+}*/
+
+int	main(void)
+{
+	char	*test = "test";
+	char	*ntest = "hello";
+	printf("%ld\n",strlcat(test, ntest, 1));
+	return (0);
 }
