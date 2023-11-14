@@ -1,25 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/12 11:11:35 by nranna            #+#    #+#             */
-/*   Updated: 2023/11/12 11:11:40 by nranna           ###   ########.fr       */
+/*   Created: 2023/11/08 15:47:44 by nranna            #+#    #+#             */
+/*   Updated: 2023/11/12 11:18:36 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+	char	*psrc;
+	char	*pdest;
+	char	*psrc_end;
+	char	*pdest_end;	
+
+	psrc = (char *)src;
+	pdest = (char *)dest;
+	psrc_end = psrc + (n - 1);
+	pdest_end = pdest + (n - 1);
+	if (pdest == psrc)
+		return (dest);
+	else if (pdest < psrc)
 	{
-		return (1);
+		while (n--)
+			*pdest++ = *psrc++;
 	}
-	else
+	else if (pdest > psrc)
 	{
-		return (0);
+		while (n--)
+			*pdest_end-- = *psrc_end--;
 	}
+	return (dest);
 }

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nranna <marvin@42.fr>                      +#+  +:+       +#+         #
+#    By: nranna <nranna@student.42.rio>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/10/18 12:19:00 by nranna            #+#    #+#              #
-#    Updated: 2023/11/08 13:09:45 by nranna           ###   ########.fr        #
+#    Created: 2023/11/12 11:20:19 by nranna            #+#    #+#              #
+#    Updated: 2023/11/13 18:06:37 by nranna           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,12 @@ CC = cc
 CCFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 
-SRC = ft_atoi.c   ft_isalnum.c  ft_isascii.c\
-ft_isprint.c  ft_memset.c  ft_tolower.c\
-ft_bzero.c  ft_isalpha.c  ft_isdigit.c\
-ft_memcpy.c   ft_strlen.c  ft_toupper.c\
+SRC = ft_atoi.c ft_isalnum.c ft_isascii.c\
+ft_isprint.c ft_memset.c ft_tolower.c\
+ft_bzero.c ft_isalpha.c ft_isdigit.c\
+ft_memcpy.c ft_strlen.c ft_toupper.c\
+ft_memmove.c ft_strncmp.c ft_putstr_fd.c\
+ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c\
 
 INCLUDE = libft.h
 
