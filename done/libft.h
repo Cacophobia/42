@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 11:13:25 by nranna            #+#    #+#             */
-/*   Updated: 2023/11/13 18:07:10 by nranna           ###   ########.fr       */
+/*   Updated: 2023/11/17 07:28:16 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,12 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
-
+void	*ft_memchr(const void *s, int c, size_t n);
+void	ft_striteri(char *s, void (*f)(unsigned int i, char *));
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strrchr(const char *s, int c);
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+char	*ft_strnstr(const char *big, const char *little, size_t len);
 #endif

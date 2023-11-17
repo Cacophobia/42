@@ -1,21 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 17:36:47 by nranna            #+#    #+#             */
-/*   Updated: 2023/11/15 10:21:29 by nranna           ###   ########.fr       */
+/*   Created: 2023/11/17 07:54:46 by nranna            #+#    #+#             */
+/*   Updated: 2023/11/17 07:56:02 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_putendl_fd(char *s, int fd)
+char *strdup(const char *s)
 {
-	if (!s)
-		return ;
-	write (fd, s, ft_strlen(s));
-	write (fd, "\n", 1);
+
 }

@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 17:36:47 by nranna            #+#    #+#             */
-/*   Updated: 2023/11/15 10:21:29 by nranna           ###   ########.fr       */
+/*   Created: 2023/11/12 11:04:03 by nranna            #+#    #+#             */
+/*   Updated: 2023/11/14 10:32:08 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	if (!s)
-		return ;
-	write (fd, s, ft_strlen(s));
-	write (fd, "\n", 1);
+	unsigned char	needle;
+	unsigned char	*haystack;
+
+	needle = (unsigned char)c;
+	haystack = (unsigned char *)s;
+	while (n--)
+	{
+		if (*haystack == needle)
+			return ((void *)haystack);
+		haystack++;
+	}
+	return (NULL);
 }

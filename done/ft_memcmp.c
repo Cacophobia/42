@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/11 11:05:23 by nranna            #+#    #+#             */
-/*   Updated: 2023/11/12 20:13:54 by nranna           ###   ########.fr       */
+/*   Created: 2023/11/15 15:58:02 by nranna            #+#    #+#             */
+/*   Updated: 2023/11/15 16:04:10 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-#include <bsd/string.h>
-#include <stdio.h>
+#include "libft.h"
 
-/*size_t	strlcat(char *dst, const char *src, size_t size)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char	*pdest;
-	char	*psrc;
+	unsigned char	*p_s1;
+	unsigned char	*p_s2;
 
-	pdest = dst;
-	psrc = 
-}*/
-
-int	main(void)
-{
-	char	*test = "test";
-	char	*ntest = "hello";
-	printf("%ld\n",strlcat(test, ntest, 1));
+	p_s1 = (unsigned char *)s1;
+	p_s2 = (unsigned char *)s2;
+	while (n--)
+	{
+		if (*p_s1 != *p_s2)
+			return (*p_s1 - *p_s2);
+		p_s1++;
+		p_s2++;
+	}
 	return (0);
 }
