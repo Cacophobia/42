@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/16 19:57:46 by nranna            #+#    #+#             */
-/*   Updated: 2023/11/17 12:25:01 by nranna           ###   ########.fr       */
+/*   Created: 2023/11/17 13:23:45 by nranna            #+#    #+#             */
+/*   Updated: 2023/11/17 14:15:03 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	little_size;
+	char	*new_s;
+	size_t	counter;
 
-	little_size = ft_strlen(little);
-	if (len == 0)
-		return ((char *)big);
-	if (!little_size)
-		return ((char *)big);
-	while (*big && little_size <= len--)
+	counter = 0;
+	if (!s || !f)
+		return (NULL);
+	new_s = ft_strdup(s);
+	if (!new_s)
+		return (NULL);
+	while (s[counter])
 	{
-		if (!ft_memcmp(big, little, little_size))
-			return ((char *)big);
-		big++;
+		new_s[counter] = f(counter, s[counter]);
+		counter++;
 	}
-	return (NULL);
+	return (new_s);
 }

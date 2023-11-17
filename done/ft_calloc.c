@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/16 19:57:46 by nranna            #+#    #+#             */
-/*   Updated: 2023/11/17 12:25:01 by nranna           ###   ########.fr       */
+/*   Created: 2023/11/17 12:50:44 by nranna            #+#    #+#             */
+/*   Updated: 2023/11/17 12:58:33 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t	little_size;
+	size_t	total_size;
+	void	*alloc_mem;
 
-	little_size = ft_strlen(little);
-	if (len == 0)
-		return ((char *)big);
-	if (!little_size)
-		return ((char *)big);
-	while (*big && little_size <= len--)
+	total_size = nmemb * size;
+	alloc_mem = malloc(total_size);
+	if (!alloc_mem)
 	{
-		if (!ft_memcmp(big, little, little_size))
-			return ((char *)big);
-		big++;
+		return (NULL);
 	}
-	return (NULL);
+	ft_bzero(alloc_mem, total_size);
+	return (alloc_mem);
 }
