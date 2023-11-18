@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 21:14:10 by nranna            #+#    #+#             */
-/*   Updated: 2023/11/18 04:22:20 by nranna           ###   ########.fr       */
+/*   Updated: 2023/11/18 04:25:45 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ char	**ft_split(char const *s, char c)
 	x = 0;
 	y = 0;
 	counter = -1;
-	while (x++ <= ft_strlen(s))
+	while (x <= ft_strlen(s))
 	{
 		if (s[x] != c && counter < 0)
 			counter = x;
@@ -74,6 +74,7 @@ char	**ft_split(char const *s, char c)
 			substrings[y++] = word_maker(s, counter, x);
 			counter = -1;
 		}
+		x++;
 	}
 	substrings[y] = 0;
 	return (substrings);
