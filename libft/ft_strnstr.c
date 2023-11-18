@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 19:57:46 by nranna            #+#    #+#             */
-/*   Updated: 2023/11/17 12:25:01 by nranna           ###   ########.fr       */
+/*   Updated: 2023/11/18 07:24:11 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,28 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t	little_size;
+	size_t	i;
+	size_t	j;
+	size_t	k;
+	char	*s;
 
-	little_size = ft_strlen(little);
-	if (len == 0)
-		return ((char *)big);
-	if (!little_size)
-		return ((char *)big);
-	while (*big && little_size <= len--)
+	i = 0;
+	j = 0;
+	s = (char *)big;
+	if (*little == '\0')
+		return (s);
+	while ((i < len) && (s[i]))
 	{
-		if (!ft_memcmp(big, little, little_size))
-			return ((char *)big);
-		big++;
+		k = i;
+		while (little[j] && (k < len) && (s[k] == little[j]))
+		{
+			if (little[j + 1] == '\0')
+				return (&s[i]);
+			k++;
+			j++;
+		}
+		j = 0;
+		i++;
 	}
 	return (NULL);
 }
