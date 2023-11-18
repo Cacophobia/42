@@ -6,7 +6,7 @@
 #    By: nranna <nranna@student.42.rio>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/12 11:20:19 by nranna            #+#    #+#              #
-#    Updated: 2023/11/18 00:53:51 by nranna           ###   ########.fr        #
+#    Updated: 2023/11/18 01:48:26 by nranna           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,11 +33,11 @@ OBJS = $(SRC:.c=.o)
 
 all: $(NAME)
 
-#DELETE THIS LATER \/
-so:
-	$(CC) -nostartfiles -fPIC $(CCFLAGS) $(SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)
-
+#UNCOMMENT THIS TO TEST UNIT \/
+#so:
+#	$(CC) -nostartfiles -fPIC $(CCFLAGS) $(SRC)
+#	gcc -nostartfiles -shared -o libft.so $(OBJS)
+#
 #until here. :)
 
 %.o: %.c $(INCLUDE)
