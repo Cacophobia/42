@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 21:14:10 by nranna            #+#    #+#             */
-/*   Updated: 2023/11/18 05:52:23 by nranna           ###   ########.fr       */
+/*   Updated: 2023/11/18 08:33:52 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ static char	*word_maker(char const *s, int start, int finish)
 char	**ft_split(char const *s, char c)
 {
 	char	**substrings;
-	int		x;
-	int		y;
+	size_t	x;
+	size_t	y;
 	int		counter;
 
 	if (!s)

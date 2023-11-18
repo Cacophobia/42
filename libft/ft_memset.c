@@ -6,26 +6,26 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 11:12:41 by nranna            #+#    #+#             */
-/*   Updated: 2023/11/12 11:12:45 by nranna           ###   ########.fr       */
+/*   Updated: 2023/11/18 08:01:39 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *ptr, int value, size_t num)
+void	*ft_memset(void *s, int c, size_t n)
 {
 	size_t			counter;
 	unsigned char	*ptr_counter;
 	unsigned char	ptr_value;
 
-	ptr_counter = (unsigned char *)ptr;
-	ptr_value = (unsigned char)value;
+	ptr_counter = (unsigned char *)s;
+	ptr_value = (unsigned char)c;
 	counter = 0;
-	while (counter < num)
+	while (counter < n)
 	{
 		*ptr_counter = ptr_value;
 		ptr_counter++;
 		counter++;
 	}
-	return (ptr);
+	return (s);
 }

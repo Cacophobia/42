@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 11:13:25 by nranna            #+#    #+#             */
-/*   Updated: 2023/11/18 05:09:38 by nranna           ###   ########.fr       */
+/*   Updated: 2023/11/18 08:32:14 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-int		ft_strlen(const char *s);
+size_t	ft_strlen(const char *s);
 int		ft_isalpha(int c);
 int		ft_atoi(const char *nptr);
 void	ft_bzero(void *s, size_t n);
@@ -26,8 +26,7 @@ int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
 void	*ft_memcpy(void *dest, const void *src, int n);
-void	*ft_memset(void *ptr, int value, size_t num);
-int		ft_strlen(const char *s);
+void	*ft_memset(void *s, int c, size_t n);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 void	*ft_memmove(void *dest, const void *src, size_t n);
