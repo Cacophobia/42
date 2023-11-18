@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 21:14:10 by nranna            #+#    #+#             */
-/*   Updated: 2023/11/18 04:25:45 by nranna           ###   ########.fr       */
+/*   Updated: 2023/11/18 05:01:51 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static char	*word_maker(char const *s, int start, int finish)
 	size_t	counter;
 
 	counter = 0;
-	substr = malloc((finish - start + 1) * sizeof(char));
+	substr = ft_calloc((finish - start + 1) * sizeof(char));
 	if (!substr)
 		return (NULL);
 	while (start < finish)
@@ -76,6 +76,5 @@ char	**ft_split(char const *s, char c)
 		}
 		x++;
 	}
-	substrings[y] = 0;
 	return (substrings);
 }
