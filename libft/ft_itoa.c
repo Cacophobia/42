@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 20:44:02 by nranna            #+#    #+#             */
-/*   Updated: 2023/11/21 16:30:24 by nranna           ###   ########.fr       */
+/*   Updated: 2023/11/21 17:44:49 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ char	*ft_itoa(int n)
 		if (n == -2147483648)
 			return (is_min());
 		result = (char *)ft_calloc((res_size + 1), sizeof(char));
+		if (result == NULL)
+			return (NULL);
 		result[0] = '-';
 		n = n * -1;
 	}
