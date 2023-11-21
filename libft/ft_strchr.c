@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 16:15:34 by nranna            #+#    #+#             */
-/*   Updated: 2023/11/16 17:57:04 by nranna           ###   ########.fr       */
+/*   Updated: 2023/11/21 14:16:33 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s != c)
+	while (*s != (char)c)
 	{
 		if (*s++ == '\0')
-			return ((char *) '\0');
+			return (NULL);
 	}
 	return ((char *)s);
 }

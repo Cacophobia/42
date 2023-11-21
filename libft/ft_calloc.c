@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 12:50:44 by nranna            #+#    #+#             */
-/*   Updated: 2023/11/17 12:58:33 by nranna           ###   ########.fr       */
+/*   Updated: 2023/11/21 14:27:11 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	void	*alloc_mem;
 
 	total_size = nmemb * size;
+	if ((nmemb) && (total_size) && ((total_size / size) != nmemb))
+		return (NULL);
 	alloc_mem = malloc(total_size);
 	if (!alloc_mem)
 	{

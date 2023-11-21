@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 17:32:28 by nranna            #+#    #+#             */
-/*   Updated: 2023/11/17 20:31:00 by nranna           ###   ########.fr       */
+/*   Updated: 2023/11/21 15:46:54 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,23 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
-	string_size = ft_strlen(s);
-	substr = (char *)malloc((len + 1) * sizeof(char));
-	if (!substr)
-		return (NULL);
-	if (start >= string_size)
-		substr[0] = '\0';
+	if (ft_strlen(s) < start)
+	{
+		substr = ft_calloc(1, sizeof(char));
+		if (!substr)
+			return (NULL);
+	}
 	else
-		ft_strlcpy(substr, (s + start), (len + 1));
+	{
+		string_size = ft_strlen(s + start);
+		if (!(string_size < len))
+			string_size = len;
+		substr = (char *)ft_calloc((string_size + 1), sizeof(char));
+		if (!substr)
+			return (NULL);
+		substr[string_size] = 0;
+		while (string_size-- > 0)
+			substr[string_size] = s[string_size + start];
+	}
 	return (substr);
 }
