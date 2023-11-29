@@ -1,0 +1,27 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    notes.txt                                          :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: nranna <nranna@student.42.rio>             +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/11/29 12:04:19 by nranna            #+#    #+#              #
+#    Updated: 2023/11/29 13:57:34 by nranna           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+we gotta redo printf.
+
+I'll not use libft, maybe try making a new library just to redo some functions
+overall it should not use that many functions. I'll make a new Makefile as well
+
+first of all is create my Makefile I guess
+
+you'll have to change your put functions so they can return a number, apparently printf
+also returns a number besides writing on screen... ehe
+
+(that's useful)
+https://csnotes.medium.com/ft-printf-tutorial-42project-f09b6dc1cd0e
+
+(also useful)
+https://hector.dev.br/2021/09/15/ft-printf/

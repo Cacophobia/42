@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 16:47:38 by nranna            #+#    #+#             */
-/*   Updated: 2023/11/29 12:53:12 by nranna           ###   ########.fr       */
+/*   Created: 2023/11/29 12:30:46 by nranna            #+#    #+#             */
+/*   Updated: 2023/11/29 15:02:58 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_libprint.h"
+#include <stdarg.h>
 
-void	ft_putstr_fd(char *s, int fd)
+int	ft_printf(const char *prnt, ...)
 {
-	if (!s)
-		return ;
-	write(fd, s, ft_strlen(s));
 }
+///Here starts a beautiful journey.

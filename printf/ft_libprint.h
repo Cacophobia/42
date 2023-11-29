@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_libprint.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 16:47:38 by nranna            #+#    #+#             */
-/*   Updated: 2023/11/29 12:53:12 by nranna           ###   ########.fr       */
+/*   Created: 2023/11/29 12:16:55 by nranna            #+#    #+#             */
+/*   Updated: 2023/11/29 15:01:45 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_LIBPRINT_H
+# define FT_LIBPRINT_H
 
-void	ft_putstr_fd(char *s, int fd)
-{
-	if (!s)
-		return ;
-	write(fd, s, ft_strlen(s));
-}
+size_t	ft_strlen(const char *s);
+int		ft_printf(const char *prnt, ...);
+int		ft_putchar(char c, int fd);
+int		ft_pustr(char *s, int fd);
+
+#endif
