@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:30:46 by nranna            #+#    #+#             */
-/*   Updated: 2023/12/17 06:56:27 by nranna           ###   ########.fr       */
+/*   Updated: 2023/12/17 10:12:10 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	ft_printf(const char *format, ...)
 	va_list	ap;
 	int	nofchars;
 	
-	n_ofchars = 0;
+	nofchars = 0;
 	va_start (ap, format);
 	while (*format != '\0')
 	{
