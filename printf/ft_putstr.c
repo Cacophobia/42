@@ -6,16 +6,17 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:49:38 by nranna            #+#    #+#             */
-/*   Updated: 2023/11/29 14:52:25 by nranna           ###   ########.fr       */
+/*   Updated: 2023/12/17 06:47:11 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
 #include <unistd.h>
 
-int	ft_putstr(char *s, int fd)
+int	ft_putstr(char *s)
 {
 	if (!s)
 		return ;
-	write (fd, s, ft_strlen(s));
+	write (1, s, ft_strlen(s));
 	return (ft_strlen(s));
 }

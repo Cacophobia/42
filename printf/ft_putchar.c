@@ -6,14 +6,14 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 14:05:25 by nranna            #+#    #+#             */
-/*   Updated: 2023/11/29 14:07:17 by nranna           ###   ########.fr       */
+/*   Updated: 2023/12/17 03:22:58 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "ft_printf.h"
 
-int	ft_putchar(char c, int fd)
+int	ft_putchar(char c)
 {
-	write (fd, &c, 1);
+	write (1, &c, 1);
 	return (1);
 }

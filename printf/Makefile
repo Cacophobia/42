@@ -6,7 +6,7 @@
 #    By: nranna <nranna@student.42.rio>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 12:06:45 by nranna            #+#    #+#              #
-#    Updated: 2023/11/29 12:57:25 by nranna           ###   ########.fr        #
+#    Updated: 2023/12/17 02:41:34 by nranna           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,11 @@ CC = cc
 CCFLAGS = -Wall -Wextra -Werror
 NAME = libftprintf.a
 
-SRC = ft_printf.c ft_putstr_fd.c ft_strlen.c #here we put our files
+#here we put our files
+SRC = ft_printf.c ft_putstr_fd.c ft_strlen.c
 
-INCLUDE = ft_libprint.h #here we make our new library to use on printf
+#here we make our new library to use on printf
+INCLUDE = ft_printf.h
 
 OBJS = $(SRC:.c=.o)
 
