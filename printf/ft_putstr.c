@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:49:38 by nranna            #+#    #+#             */
-/*   Updated: 2023/12/17 06:47:11 by nranna           ###   ########.fr       */
+/*   Updated: 2023/12/17 10:38:16 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int	ft_putstr(char *s)
 {
 	if (!s)
-		return ;
+		return (0);
 	write (1, s, ft_strlen(s));
 	return (ft_strlen(s));
 }
