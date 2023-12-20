@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:30:46 by nranna            #+#    #+#             */
-/*   Updated: 2023/12/20 15:55:42 by nranna           ###   ########.fr       */
+/*   Updated: 2023/12/20 16:01:52 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,8 +96,8 @@ int	ft_printf(const char *format, ...)
 		{
 			format++;
 			nofchars = nofchars + format_check(*format, ap);
+			break;
 		}
-		format++;
 		nofchars = nofchars + ft_putchar(*format);
 	}
 	va_end (ap);
