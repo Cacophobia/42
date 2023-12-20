@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 12:30:46 by nranna            #+#    #+#             */
-/*   Updated: 2023/12/20 16:01:52 by nranna           ###   ########.fr       */
+/*   Updated: 2023/12/20 17:19:24 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,10 +77,19 @@ int	format_check(char form, va_list ap)
 		nofchars = nofchars + ft_putnbr(va_arg(ap, int), 10);
 	else if (form == 'x')
 		nofchars = nofchars + ft_putnbr(va_arg(ap, unsigned int), 16);
-	else
+	else if (form == 'p')
+		
+
+
+
+
+
+
+
+
+	else	
 		nofchars = nofchars + write(1, &form, 1);
-	return (nofchars);
-	
+	return (nofchars);	
 }
 
 int	ft_printf(const char *format, ...)
@@ -96,9 +105,10 @@ int	ft_printf(const char *format, ...)
 		{
 			format++;
 			nofchars = nofchars + format_check(*format, ap);
-			break;
 		}
-		nofchars = nofchars + ft_putchar(*format);
+		else
+			nofchars = nofchars + ft_putchar(*format);
+		format++;
 	}
 	va_end (ap);
 	return (nofchars);
@@ -106,10 +116,12 @@ int	ft_printf(const char *format, ...)
 
 int	main(void)
 {
-	ft_printf("%s", "deu certo?");
-	printf("%s", "\nparece que sim :)");
+	void	*n;
+	char	*ptr;
+
+	ptr = "nathan";
+	n = NULL;
+	ft_printf("%s %c %% %p %p", "\ndeu certo?", 'c', n, ptr);
+	printf("%s %c %% %p %p", "\nparece que nao :)", 'c', n, ptr);
 	return (0);
 }
-
-
-//ok it works fine with raw text but you also need to take care of some things

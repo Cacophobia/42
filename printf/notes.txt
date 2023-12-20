@@ -6,7 +6,7 @@
 #    By: nranna <nranna@student.42.rio>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 12:04:19 by nranna            #+#    #+#              #
-#    Updated: 2023/12/20 15:37:44 by nranna           ###   ########.fr        #
+#    Updated: 2023/12/20 17:20:11 by nranna           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,3 +30,5 @@ https://hector.dev.br/2021/09/15/ft-printf/
 https://medium.com/@thiagoschaves61/estudos-de-um-leigo-em-ft-printf-07294484a8e1
 
 one note, i've done with just one single file but it would be good if you split it later, just for good measure.
+
+you'll have to make a new function just to handle %p... :(
