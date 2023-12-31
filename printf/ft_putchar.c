@@ -6,11 +6,12 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 14:05:25 by nranna            #+#    #+#             */
-/*   Updated: 2023/12/17 03:22:58 by nranna           ###   ########.fr       */
+/*   Updated: 2023/12/28 23:03:40 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <unistd.h>
 
 int	ft_putchar(char c)
 {

@@ -6,33 +6,58 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/17 02:43:24 by nranna            #+#    #+#             */
-/*   Updated: 2023/12/17 10:58:54 by nranna           ###   ########.fr       */
+/*   Updated: 2023/12/31 10:11:32 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int    ft_putnbr(int n, int base)
+int	ft_putnbr(int n)
 {
-//	int	nofchars;
-//	char	*hex;
+	long int	big_n;
+	int			nofchars;
 
-//	hex = "0123456789abcdef";
-//	nofchars = 0;
-        if (n == -2147483648)
-                ft_putstr("-2147483648");
-        else if (n < 0)
-        {
-                ft_putchar('-');
-                n = n * -1;
-                ft_putnbr(n, base);
-        }
-        else if (n > 9)
-        {
-                ft_putnbr((n / base), base);
-                ft_putnbr((n % base), base);
-        }
-        else
-                ft_putchar(((char)n + '0'));
-	return (0);
+	big_n = n;
+	nofchars = 0;
+	if (big_n < 0)
+	{
+		nofchars += ft_putchar('-');
+		big_n = big_n * -1;
+	}
+	if (big_n > 9)
+	{
+		nofchars += ft_putnbr(big_n / 10);
+	}
+	nofchars += ft_putchar((big_n % 10) + '0');
+	return (nofchars);
+}
+
+int	ft_put_unsnbr(unsigned int n)
+{
+	int	nofchars;
+
+	nofchars = 0;
+	if (n > 9)
+	{
+		nofchars += ft_putnbr(n / 10);
+	}
+	nofchars += ft_putchar((n % 10) + '0');
+	return (nofchars);
+}
+
+int	ft_puthex(unsigned int n, char *base)
+{
+	long int	big_n;
+	int			nofchars;
+
+	big_n = n;
+	nofchars = 0;
+	if (big_n < 16)
+		nofchars += ft_putchar(base[big_n % 16]);
+	else if (big_n >= 16)
+	{
+		nofchars += ft_puthex((big_n / 16), base);
+		nofchars += ft_putchar(base[big_n % 16]);
+	}
+	return (nofchars);
 }

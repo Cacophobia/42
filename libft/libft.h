@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 11:13:25 by nranna            #+#    #+#             */
-/*   Updated: 2023/11/18 08:32:14 by nranna           ###   ########.fr       */
+/*   Updated: 2023/12/22 17:03:32 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,83 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+/* *********************************************************************** */
+/*                                                                         */
+/*  [ft_strlen] will loop through your string until it reaches its end.    */
+/*  @return = string lenght.                                               */
+/*  @param s = pointer to your string.                                     */
+/*                                                                         */
+/* *********************************************************************** */
 size_t	ft_strlen(const char *s);
+
+/* *********************************************************************** */
+/*                                                                         */
+/*  [ft_isalpha] checks if c is part of the alphabet.                      */
+/*  @return = 1 if true and 0 is false.                                    */
+/*  @param c = int to be checked in the ASCII table.                       */
+/*                                                                         */
+/* *********************************************************************** */
 int		ft_isalpha(int c);
+
+/* *********************************************************************** */
+/*                                                                         */
+/*  [ft_isdigit] checks if c is a number between 0 and 9.                  */
+/*  @return = 1 if true and 0 is false.                                    */
+/*  @param c = int to be checked in the ASCII table.                       */
+/*                                                                         */
+/* *********************************************************************** */
+int		ft_isdigit(int c);
+
+/* *********************************************************************** */
+/*                                                                         */
+/*  [ft_isalnum] checks if c is true in ft_isdigit and ft_isalpha.         */
+/*  @return = 1 if true and 0 is false.                                    */
+/*  @param c = int to be checked in the ASCII table.                       */
+/*                                                                         */
+/* *********************************************************************** */
+int		ft_isalnum(int c);
+
+/* *********************************************************************** */
+/*                                                                         */
+/*  [ft_isascii] checks if c is part of the ASCII table.                   */
+/*  @return = 1 if true and 0 is false.                                    */
+/*  @param c = int to be checked in the ASCII table                        */
+/*                                                                         */
+/* *********************************************************************** */
+int		ft_isascii(int c);
+
+/* *********************************************************************** */
+/*                                                                         */
+/*  [ft_isprint] checks if c is printable.                                 */
+/*  @return = 1 if true and 0 is false.                                    */
+/*  @param c = int to be checked in the ASCII table.                       */
+/*                                                                         */
+/* *********************************************************************** */
+int		ft_isprint(int c);
+
+/* *********************************************************************** */
+/*                                                                         */
+/*  [ft_tolower] converts uppercase char to lowercase char using ASCII.    */
+/*  @return = c + 32.                                                      */
+/*  @param c = int to be converted.                                        */
+/*                                                                         */
+/* *********************************************************************** */
+int		ft_tolower(int c);
+
+/* *********************************************************************** */
+/*                                                                         */
+/*  [ft_tolower] converts lowercase char to uppercase char using ASCII.    */
+/*  @return = c - 32.                                                      */
+/*  @param c = int to be converted.                                        */
+/*                                                                         */
+/* *********************************************************************** */
+int		ft_toupper(int c);
+
+
 int		ft_atoi(const char *nptr);
 void	ft_bzero(void *s, size_t n);
-int		ft_isalnum(int c);
-int		ft_isalpha(int c);
-int		ft_isascii(int c);
-int		ft_isdigit(int c);
-int		ft_isprint(int c);
 void	*ft_memcpy(void *dest, const void *src, int n);
 void	*ft_memset(void *s, int c, size_t n);
-int		ft_tolower(int c);
-int		ft_toupper(int c);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	ft_putstr_fd(char *s, int fd);

@@ -1,25 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   linear_search.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/29 12:53:03 by nranna            #+#    #+#             */
-/*   Updated: 2023/12/17 02:53:39 by nranna           ###   ########.fr       */
+/*   Created: 2023/12/27 16:07:53 by nranna            #+#    #+#             */
+/*   Updated: 2023/12/27 17:30:21 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <stdio.h>
 
-size_t	ft_strlen(const char *s)
+int	search(char needle, char *haystack)
 {
-	size_t	counter;
+	int	i;
 
-	counter = 0;
-	while (s[counter])
+	i = 0;
+	while (haystack[i] != '\0')
 	{
-		counter++;
+		if (haystack[i] == needle)
+			return (1);
+		i++;
 	}
-	return (counter);
+	return (0);
+}
+
+int	main(void)
+{
+	char	string[6] = "nathan";
+	char	needle;
+
+	printf("What char do you want to find? ");
+	scanf("%c", &needle);
+	if (search(needle, string) == 1)
+		printf("I've found it.\n");
+	else
+		printf("Couldn't find it.\n");
+	return (0);
 }
