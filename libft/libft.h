@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 11:13:25 by nranna            #+#    #+#             */
-/*   Updated: 2023/12/22 17:03:32 by nranna           ###   ########.fr       */
+/*   Updated: 2024/01/08 18:54:34 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,16 +81,32 @@ int		ft_tolower(int c);
 
 /* *********************************************************************** */
 /*                                                                         */
-/*  [ft_tolower] converts lowercase char to uppercase char using ASCII.    */
+/*  [ft_toupper] converts lowercase char to uppercase char using ASCII.    */
 /*  @return = c - 32.                                                      */
 /*  @param c = int to be converted.                                        */
 /*                                                                         */
 /* *********************************************************************** */
 int		ft_toupper(int c);
 
-
+/* *********************************************************************** */
+/*                                                                         */
+/*  [ft_atoi] converts ASCII represented number to integer number.         */
+/*  @return = int number.                                                  */
+/*  @param *nptr = pointer to char or array of chars(string).              */
+/*                                                                         */
+/* *********************************************************************** */
 int		ft_atoi(const char *nptr);
+
+/* *********************************************************************** */
+/*                                                                         */
+/*  [ft_bzero] set a memory block to '\0'.                                 */
+/*  @return = c - 32.                                                      */
+/*  @param c = int to be converted.                                        */
+/*                                                                         */
+/* *********************************************************************** */
 void	ft_bzero(void *s, size_t n);
+
+
 void	*ft_memcpy(void *dest, const void *src, int n);
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);

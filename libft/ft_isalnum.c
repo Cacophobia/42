@@ -6,7 +6,7 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 11:16:19 by nranna            #+#    #+#             */
-/*   Updated: 2023/11/12 11:16:22 by nranna           ###   ########.fr       */
+/*   Updated: 2024/01/08 16:46:09 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isalnum(int c)
 {
-	if (ft_isalpha(c) || ft_isdigit(c))
+	if (ft_isalpha(c) && ft_isdigit(c))
 	{
 		return (1);
 	}

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/31 17:23:10 by nranna            #+#    #+#             */
-/*   Updated: 2024/01/10 21:41:21 by nranna           ###   ########.fr       */
+/*   Created: 2024/01/11 13:02:16 by nranna            #+#    #+#             */
+/*   Updated: 2024/01/11 13:46:39 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ char	*get_next_line(int fd)
 {
 	static char	*stockpile;
 	char		*line;
-	
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, &line, 0) < 0)
-		return (NULL);
-	stockpile = read_function(fd, stockpile);
+
+	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (0);
+	stockpile = get_buffer(fd, stockpile);
 	if (!stockpile)
 		return (NULL);
 	line = get_line(stockpile);
@@ -27,34 +27,41 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-char	*read_function(int fd, char *stockpile)
+char	*get_buffer(int fd, char *stockpile)
 {
-	char	*tmp_line;
-	int	nofchars;
+	int		chars_read;
+	char	*pile;
 
-	tmp_line = (char *)ft_calloc((BUFFER_SIZE + 1), sizeof(char));
-	if (tmp_line == NULL)
+	pile = malloc((BUFFER_SIZE + 1) * sizeof(char));
+	if (!pile)
 		return (NULL);
-	while (ft_strchr(stockpile, '\n') == NULL)
+	chars_read = 1;
+	while (!ft_strrchr(stockpile, '\n') && (chars_read != 0))
 	{
-		nofchars = read(fd, tmp_line, BUFFER_SIZE);
-		stockpile = ft_strjoin(stockpile, tmp_line);
+		chars_read = read(fd, pile, BUFFER_SIZE);
+		if (chars_read == -1)
+		{
+			free(pile);
+			return (NULL);
+		}
+		pile[chars_read] = '\0';
+		stockpile = ft_strjoin(stockpile, pile);
 	}
-	free (tmp_line);
+	free(pile);
 	return (stockpile);
 }
 
 char	*get_line(char *stockpile)
 {
-	int	counter;
+	int		counter;
 	char	*line;
 
 	counter = 0;
-	if (stockpile[counter] == NULL)
+	if (!stockpile[counter])
 		return (NULL);
 	while (stockpile[counter] && stockpile[counter] != '\n')
 		counter++;
-	line = ft_calloc((counter + 1), sizeof(char));
+	line = (char *)malloc(sizeof(char) * (counter + 2));
 	if (!line)
 		return (NULL);
 	counter = 0;
@@ -65,32 +72,32 @@ char	*get_line(char *stockpile)
 	}
 	if (stockpile[counter] == '\n')
 	{
-		line[counter] == '\n';
+		line[counter] = stockpile[counter];
 		counter++;
 	}
+	line[counter] = '\0';
 	return (line);
 }
 
 char	*erase_line(char *stockpile)
 {
-	int	counter;
-	int	counter2;
+	int		counter;
+	int		counter2;
 	char	*n_stockpile;
 
 	counter = 0;
 	while (stockpile[counter] && stockpile[counter] != '\n')
 		counter++;
-	if (stockpile[counter] == NULL)
+	if (!stockpile[counter])
 	{
 		free(stockpile);
 		return (NULL);
 	}
-	counter++;
-	n_stockpile = ft_calloc(ft_strlen(stockpile) - counter, sizeof(char));
-	if (n_stockpile == NULL)
+	n_stockpile = (char *)malloc(sizeof(char) * (ft_strlen(stockpile) - counter + 1));
+	if (!n_stockpile)
 		return (NULL);
+	counter++;
 	counter2 = 0;
-	//I think it's possible to use stdup here
 	while (stockpile[counter])
 		n_stockpile[counter2++] = stockpile[counter++];
 	n_stockpile[counter2] = '\0';
