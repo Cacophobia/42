@@ -6,13 +6,13 @@
 /*   By: nranna <nranna@student.42.rio>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:43:16 by nranna            #+#    #+#             */
-/*   Updated: 2024/01/06 11:19:07 by nranna           ###   ########.fr       */
+/*   Updated: 2023/11/21 14:41:15 by nranna           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char *s1, char *s2, int flag)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	counter;
 	size_t	counter2;
@@ -38,12 +38,5 @@ char	*ft_strjoin(char *s1, char *s2, int flag)
 		counter2++;
 	}
 	s3[counter + counter2] = '\0';
-	if (flag == 0)
-		return (s3);
-	if (flag == 1)
-	{
-		free (s1);
-		return (s3);
-	}
 	return (s3);
 }
